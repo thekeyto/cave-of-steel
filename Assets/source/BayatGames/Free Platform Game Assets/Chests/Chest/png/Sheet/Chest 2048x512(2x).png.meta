@@ -1,0 +1,737 @@
+fileFormatVersion: 2
+guid: 1685ff528d5846041ab0a8a01abb369b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8129547104552166849
+    second: Chest 2048x512(2x)_0
+  - first:
+      213: -1894564470018918674
+    second: Chest 2048x512(2x)_1
+  - first:
+      213: -1429242384532422836
+    second: Chest 2048x512(2x)_2
+  - first:
+      213: -5448664829686380042
+    second: Chest 2048x512(2x)_3
+  - first:
+      213: -3747831703023138257
+    second: Chest 2048x512(2x)_4
+  - first:
+      213: 5723643682522599216
+    second: Chest 2048x512(2x)_5
+  - first:
+      213: 428562264219221139
+    second: Chest 2048x512(2x)_6
+  - first:
+      213: 4246373576606467070
+    second: Chest 2048x512(2x)_7
+  - first:
+      213: -6586782295421996244
+    second: Chest 2048x512(2x)_8
+  - first:
+      213: -6493734837377404265
+    second: Chest 2048x512(2x)_9
+  - first:
+      213: 6261162728303739574
+    second: Chest 2048x512(2x)_10
+  - first:
+      213: -1197929757860202447
+    second: Chest 2048x512(2x)_11
+  - first:
+      213: 8230300103399220854
+    second: Chest 2048x512(2x)_12
+  - first:
+      213: 4636292038155599561
+    second: Chest 2048x512(2x)_13
+  - first:
+      213: -3666070120660633913
+    second: Chest 2048x512(2x)_14
+  - first:
+      213: -4758934550733509575
+    second: Chest 2048x512(2x)_15
+  - first:
+      213: 2879145697089948832
+    second: Chest 2048x512(2x)_16
+  - first:
+      213: -5679615872535633796
+    second: Chest 2048x512(2x)_17
+  - first:
+      213: 3802120336893721958
+    second: Chest 2048x512(2x)_18
+  - first:
+      213: 7622715290961596045
+    second: Chest 2048x512(2x)_19
+  - first:
+      213: 670593423032859526
+    second: Chest 2048x512(2x)_20
+  - first:
+      213: -1231842868336985462
+    second: Chest 2048x512(2x)_21
+  - first:
+      213: 5661242167882191053
+    second: Chest 2048x512(2x)_22
+  - first:
+      213: -7788526533596800785
+    second: Chest 2048x512(2x)_23
+  - first:
+      213: -6516418426123724378
+    second: Chest 2048x512(2x)_24
+  - first:
+      213: 2710241061290417095
+    second: Chest 2048x512(2x)_25
+  - first:
+      213: 8553402593803201205
+    second: Chest 2048x512(2x)_26
+  - first:
+      213: -7675858595640683268
+    second: Chest 2048x512(2x)_27
+  - first:
+      213: 3833840744468169876
+    second: Chest 2048x512(2x)_28
+  - first:
+      213: -7033981964214187757
+    second: Chest 2048x512(2x)_29
+  - first:
+      213: -7065474111863230360
+    second: Chest 2048x512(2x)_30
+  - first:
+      213: -8857637193911728793
+    second: Chest 2048x512(2x)_31
+  - first:
+      213: 2128637774482963387
+    second: Chest 2048x512(2x)_32
+  - first:
+      213: -857158386353198911
+    second: Chest 2048x512(2x)_33
+  - first:
+      213: -1324241282748390594
+    second: Chest 2048x512(2x)_34
+  - first:
+      213: 261268108715545132
+    second: Chest 2048x512(2x)_35
+  - first:
+      213: -7805273289677723036
+    second: Chest 2048x512(2x)_36
+  - first:
+      213: 7640297193336126470
+    second: Chest 2048x512(2x)_37
+  - first:
+      213: -515527840208163568
+    second: Chest 2048x512(2x)_38
+  - first:
+      213: 6345596258301211504
+    second: Chest 2048x512(2x)_39
+  - first:
+      213: 8412202416232704755
+    second: Chest 2048x512(2x)_40
+  - first:
+      213: -301035134715220474
+    second: Chest 2048x512(2x)_41
+  - first:
+      213: 201074866147382798
+    second: Chest 2048x512(2x)_42
+  - first:
+      213: -8502837114977012230
+    second: Chest 2048x512(2x)_43
+  - first:
+      213: -3172121985101610722
+    second: Chest 2048x512(2x)_44
+  - first:
+      213: -352425459461277499
+    second: Chest 2048x512(2x)_45
+  - first:
+      213: 4478972177835030236
+    second: Chest 2048x512(2x)_46
+  - first:
+      213: 5408725733901484748
+    second: Chest 2048x512(2x)_47
+  - first:
+      213: 7718563219227326471
+    second: Chest 2048x512(2x)_48
+  - first:
+      213: -4721112330361467283
+    second: Chest 2048x512(2x)_49
+  - first:
+      213: -1701580724614374
+    second: Chest 2048x512(2x)_50
+  - first:
+      213: -4966202904660986044
+    second: Chest 2048x512(2x)_51
+  - first:
+      213: 5460392618576751013
+    second: Chest 2048x512(2x)_52
+  - first:
+      213: -8690480998892389502
+    second: Chest 2048x512(2x)_53
+  - first:
+      213: -5713503492837697803
+    second: Chest 2048x512(2x)_54
+  - first:
+      213: 4993576206621460299
+    second: Chest 2048x512(2x)_55
+  - first:
+      213: 3834375056401638827
+    second: Chest 2048x512(2x)_56
+  - first:
+      213: -3135385065528009449
+    second: Chest 2048x512(2x)_57
+  - first:
+      213: -6935393066037874701
+    second: Chest 2048x512(2x)_58
+  - first:
+      213: 4337204690346222449
+    second: Chest 2048x512(2x)_59
+  - first:
+      213: -8899265389060153927
+    second: Chest 2048x512(2x)_60
+  - first:
+      213: -4410953959726366937
+    second: Chest 2048x512(2x)_61
+  - first:
+      213: 4683564404402744491
+    second: Chest 2048x512(2x)_62
+  - first:
+      213: -5308675827163208886
+    second: Chest 2048x512(2x)_63
+  - first:
+      213: -2145377782761127217
+    second: Chest 2048x512(2x)_64
+  - first:
+      213: 4830675261902415085
+    second: Chest 2048x512(2x)_65
+  - first:
+      213: -6801729441435797456
+    second: Chest 2048x512(2x)_66
+  - first:
+      213: 2957744409564845940
+    second: Chest 2048x512(2x)_67
+  - first:
+      213: -3583939280420629742
+    second: Chest 2048x512(2x)_68
+  - first:
+      213: 233438199097660274
+    second: Chest 2048x512(2x)_69
+  - first:
+      213: -1432522620219051582
+    second: Chest 2048x512(2x)_70
+  - first:
+      213: -5048202484213310666
+    second: Chest 2048x512(2x)_71
+  - first:
+      213: 422396791325281099
+    second: Chest 2048x512(2x)_72
+  - first:
+      213: 539744760087199560
+    second: Chest 2048x512(2x)_73
+  - first:
+      213: -8869060417033181058
+    second: Chest 2048x512(2x)_74
+  - first:
+      213: 6091374530532809906
+    second: Chest 2048x512(2x)_75
+  - first:
+      213: -4701650457580899063
+    second: Chest 2048x512(2x)_76
+  - first:
+      213: 2929929897655465494
+    second: Chest 2048x512(2x)_77
+  - first:
+      213: -1799205012140471027
+    second: Chest 2048x512(2x)_78
+  - first:
+      213: -3594706277484630567
+    second: Chest 2048x512(2x)_79
+  - first:
+      213: -1382805109734126997
+    second: Chest 2048x512(2x)_80
+  - first:
+      213: -778970064261153364
+    second: Chest 2048x512(2x)_81
+  - first:
+      213: -4893416731637052809
+    second: Chest 2048x512(2x)_82
+  - first:
+      213: -3563376640651600037
+    second: Chest 2048x512(2x)_83
+  - first:
+      213: -188882032875964555
+    second: Chest 2048x512(2x)_84
+  - first:
+      213: -7900662423890795398
+    second: Chest 2048x512(2x)_85
+  - first:
+      213: 4992560194937231183
+    second: Chest 2048x512(2x)_86
+  - first:
+      213: 5088743272175403192
+    second: Chest 2048x512(2x)_87
+  - first:
+      213: 498628577710097995
+    second: Chest 2048x512(2x)_88
+  - first:
+      213: -1248914589896631583
+    second: Chest 2048x512(2x)_89
+  - first:
+      213: 4079890462415613139
+    second: Chest 2048x512(2x)_90
+  - first:
+      213: -4689487857729408100
+    second: Chest 2048x512(2x)_91
+  - first:
+      213: 7828717555783404543
+    second: Chest 2048x512(2x)_92
+  - first:
+      213: 1361546161566564907
+    second: Chest 2048x512(2x)_93
+  - first:
+      213: 8095624309357334655
+    second: Chest 2048x512(2x)_94
+  - first:
+      213: -8391556610075697995
+    second: Chest 2048x512(2x)_95
+  - first:
+      213: 5589208027495044882
+    second: Chest 2048x512(2x)_96
+  - first:
+      213: 8098740843632887091
+    second: Chest 2048x512(2x)_97
+  - first:
+      213: 5074289513867955897
+    second: Chest 2048x512(2x)_98
+  - first:
+      213: 2654215688518505746
+    second: Chest 2048x512(2x)_99
+  - first:
+      213: -1924781292032654420
+    second: Chest 2048x512(2x)_100
+  - first:
+      213: -6613641245965293019
+    second: Chest 2048x512(2x)_101
+  - first:
+      213: -497805293298802740
+    second: Chest 2048x512(2x)_102
+  - first:
+      213: 5100452532776392971
+    second: Chest 2048x512(2x)_103
+  - first:
+      213: -3063714725019678335
+    second: Chest 2048x512(2x)_104
+  - first:
+      213: -4893490141363276920
+    second: Chest 2048x512(2x)_105
+  - first:
+      213: -4987374992603031333
+    second: Chest 2048x512(2x)_106
+  - first:
+      213: -3877173883304999475
+    second: Chest 2048x512(2x)_107
+  - first:
+      213: 6005621956684416863
+    second: Chest 2048x512(2x)_108
+  - first:
+      213: -2506239084294491745
+    second: Chest 2048x512(2x)_109
+  - first:
+      213: -8863983415858565735
+    second: Chest 2048x512(2x)_110
+  - first:
+      213: -4560412464178123457
+    second: Chest 2048x512(2x)_111
+  - first:
+      213: 6602149249649721202
+    second: Chest 2048x512(2x)_112
+  - first:
+      213: -1334556521600132275
+    second: Chest 2048x512(2x)_113
+  - first:
+      213: -8611122298550468149
+    second: Chest 2048x512(2x)_114
+  - first:
+      213: 201409793249212638
+    second: Chest 2048x512(2x)_115
+  - first:
+      213: -7452223765925258153
+    second: Chest 2048x512(2x)_116
+  - first:
+      213: 8394106977484270293
+    second: Chest 2048x512(2x)_117
+  - first:
+      213: 8645043493230755963
+    second: Chest 2048x512(2x)_118
+  - first:
+      213: -1776773901962178860
+    second: Chest 2048x512(2x)_119
+  - first:
+      213: 7207671354122257247
+    second: Chest 2048x512(2x)_120
+  - first:
+      213: -7400146621320096512
+    second: Chest 2048x512(2x)_121
+  - first:
+      213: 4117561565373420965
+    second: Chest 2048x512(2x)_122
+  - first:
+      213: 7679086683541827446
+    second: Chest 2048x512(2x)_123
+  - first:
+      213: -6417613878496091039
+    second: Chest 2048x512(2x)_124
+  - first:
+      213: 2166784250826607780
+    second: Chest 2048x512(2x)_125
+  - first:
+      213: 5987996978230908517
+    second: Chest 2048x512(2x)_126
+  - first:
+      213: -2706002156417372166
+    second: Chest 2048x512(2x)_127
+  - first:
+      213: -1887942616904636200
+    second: Chest 2048x512(2x)_128
+  - first:
+      213: -3882278339050600357
+    second: Chest 2048x512(2x)_129
+  - first:
+      213: -4706225860554227969
+    second: Chest 2048x512(2x)_130
+  - first:
+      213: -8774574954503836345
+    second: Chest 2048x512(2x)_131
+  - first:
+      213: 1046504038800473217
+    second: Chest 2048x512(2x)_132
+  - first:
+      213: -2483003489806162149
+    second: Chest 2048x512(2x)_133
+  - first:
+      213: 8872234330040254014
+    second: Chest 2048x512(2x)_134
+  - first:
+      213: -3577922428999873816
+    second: Chest 2048x512(2x)_135
+  - first:
+      213: 2513529601180351809
+    second: Chest 2048x512(2x)_136
+  - first:
+      213: -1353257287987937210
+    second: Chest 2048x512(2x)_137
+  - first:
+      213: -3171173137834643244
+    second: Chest 2048x512(2x)_138
+  - first:
+      213: -8228540031630310941
+    second: Chest 2048x512(2x)_139
+  - first:
+      213: 2079086322188165604
+    second: Chest 2048x512(2x)_140
+  - first:
+      213: -6530314859485551330
+    second: Chest 2048x512(2x)_141
+  - first:
+      213: -8726137949896059025
+    second: Chest 2048x512(2x)_142
+  - first:
+      213: 2400605605172023359
+    second: Chest 2048x512(2x)_143
+  - first:
+      213: 1332278673935387766
+    second: Chest 2048x512(2x)_144
+  - first:
+      213: 1457510224502846928
+    second: Chest 2048x512(2x)_145
+  - first:
+      213: -4412107993789988242
+    second: Chest 2048x512(2x)_146
+  - first:
+      213: 4749498921022129974
+    second: Chest 2048x512(2x)_147
+  - first:
+      213: -3946281576026258043
+    second: Chest 2048x512(2x)_148
+  - first:
+      213: 2629691852576787256
+    second: Chest 2048x512(2x)_149
+  - first:
+      213: -2480267723973507593
+    second: Chest 2048x512(2x)_150
+  - first:
+      213: -8843227063104277125
+    second: Chest 2048x512(2x)_151
+  - first:
+      213: 2977111088115268246
+    second: Chest 2048x512(2x)_152
+  - first:
+      213: 5017096568691442593
+    second: Chest 2048x512(2x)_153
+  - first:
+      213: 4423733844598212087
+    second: Chest 2048x512(2x)_0
+  - first:
+      213: -7300012571827063535
+    second: Chest 2048x512(2x)_1
+  - first:
+      213: -5412888906119743576
+    second: Chest 2048x512(2x)_2
+  - first:
+      213: 9149559272274931686
+    second: Chest 2048x512(2x)_3
+  - first:
+      213: -3708838462412132709
+    second: Chest 2048x512(2x)_4
+  - first:
+      213: 8848844435367921837
+    second: Chest 2048x512(2x)_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chest 2048x512(2x)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f546246e72446d30800000000000000
+      internalID: 4423733844598212087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest 2048x512(2x)_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 112
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115bc583e3521ba90800000000000000
+      internalID: -7300012571827063535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest 2048x512(2x)_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 112
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a77416f73e81e4b0800000000000000
+      internalID: -5412888906119743576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest 2048x512(2x)_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 112
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef24538ea3c9fe70800000000000000
+      internalID: 9149559272274931686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest 2048x512(2x)_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 112
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e6e96911f878cc0800000000000000
+      internalID: -3708838462412132709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1b68ae9029852cd449227700a2b83ffc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
