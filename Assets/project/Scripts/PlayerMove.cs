@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float normalspeed = 5;
-    public float rushspeed = 15;
+    //public float rushspeed = 15;
     public float jumpSpeed = 30;
     public bool ifground = true;
-    public float gravity = 3.0f;
-    public bool canrush = true;
-    public bool canwalk = true;
+    //public float gravity = 3.0f;
+    public bool canleft = true;
+    public bool canright = true;
+    //public bool canrush = true;
     public bool canjump = true;
-    public bool flyrush = false;
+    //public bool flyrush = false;
+    public bool cancrouch = false;
     public bool[] chip=new bool[10];
 
     CapsuleCollider2D collider;
@@ -34,11 +36,16 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         CheckOnTheGround();
-        if (canrush==true) Rush();
-        if (canwalk==true&&rushflag==false)Run();
-        if (canjump==true&&rushflag==false)Jump();
+        //if (canrush==true) Rush();
+        if (rushflag==false) Run();
+        if (canjump==true&&rushflag==false) Jump();
+        if (cancrouch) Crouch();
     }
-    void Rush()
+    void Crouch()
+    {
+        animator.SetBool("crouch", true);
+    }
+    /*void Rush()
     {
         float rushdir=0;
         rushCoolTime += Time.deltaTime;
@@ -66,11 +73,11 @@ public class PlayerMove : MonoBehaviour
             rushflag =false;animator.SetBool("Idle", true);
             animator.SetBool("Run", false);
         }
-    }
+    }*/
     bool CheckOnTheGround()
     {
         ifground = collider.IsTouchingLayers(LayerMask.GetMask("ground"));
-        if (ifground == true) flyrush = false;
+        //if (ifground == true) flyrush = false;
         return ifground;
     }
     void Jump()
@@ -88,6 +95,8 @@ public class PlayerMove : MonoBehaviour
         float v = Input.GetAxis("Horizontal");
         if (v != 0)
         {
+            if (v < 0 && canleft == false) return;
+            if (v > 0 && canright == false) return;
             Vector2 playervel = new Vector2(v * normalspeed, rigidbody.velocity.y);
             rigidbody.velocity = playervel;
             Flip(v);

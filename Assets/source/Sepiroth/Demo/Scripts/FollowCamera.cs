@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FollowCamera : MonoBehaviour {
+public class FollowCamera : MonoBehaviour 
+{
 
 	float interpVelocity;
 
@@ -34,5 +35,3 @@ public class FollowCamera : MonoBehaviour {
 		}
 	}
 }
-
-// Original post with image here  >  http://unity3diy.blogspot.com/2015/02/unity-2d-camera-follow-script.html

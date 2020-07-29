@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class bag : MonoBehaviour
 {
+    public int totalChip;
     public bool activeSelf;
-    public GameObject bagCanvas;
+    public GameObject bagCan;
+    public Canvas bagcanvas;
     // Start is called before the first frame update
     void Start()
     {
         activeSelf = false;
+        totalChip = 0;
+        bagcanvas = bagCan.GetComponent<Canvas>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.E))
             SetActive();
     }
     // Update is called once per frame
@@ -22,12 +26,12 @@ public class bag : MonoBehaviour
     { 
         if (activeSelf == false)
         {
-            bagCanvas.SetActive(true);
+            bagCan.SetActive(true);
             activeSelf = true;
         } 
         else
         {
-            bagCanvas.SetActive(false);
+            bagCan.SetActive(false);
             activeSelf = false;
         }
     }

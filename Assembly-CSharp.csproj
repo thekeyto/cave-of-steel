@@ -66,9 +66,16 @@
     <Compile Include="Assets\project\Scripts\Chip.cs" />
     <Compile Include="Assets\project\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\project\Scripts\bag.cs" />
+    <Compile Include="Assets\project\Scripts\bagmenu.cs" />
     <Compile Include="Assets\project\Scripts\box.cs" />
     <Compile Include="Assets\project\Scripts\chipmenu.cs" />
+    <Compile Include="Assets\project\Scripts\followPlayer.cs" />
     <Compile Include="Assets\project\Scripts\reactive.cs" />
+    <Compile Include="Assets\project\inventory\Inventory.cs" />
+    <Compile Include="Assets\project\inventory\InventoryManager.cs" />
+    <Compile Include="Assets\project\inventory\Item.cs" />
+    <Compile Include="Assets\project\inventory\ItemOnWorld.cs" />
+    <Compile Include="Assets\project\inventory\slot.cs" />
     <Compile Include="Assets\source\AllSkyFree\AllSkyFree_Menu.cs" />
     <Compile Include="Assets\source\Sepiroth\Demo\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\source\Sepiroth\Demo\Scripts\FlyingPlayerController.cs" />
