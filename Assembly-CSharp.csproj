@@ -63,29 +63,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\project\Scripts\Chip.cs" />
+    <Compile Include="Assets\project\Scripts\MoveBag.cs" />
     <Compile Include="Assets\project\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\project\Scripts\bag.cs" />
-    <Compile Include="Assets\project\Scripts\bagmenu.cs" />
     <Compile Include="Assets\project\Scripts\box.cs" />
-    <Compile Include="Assets\project\Scripts\chipmenu.cs" />
     <Compile Include="Assets\project\Scripts\followPlayer.cs" />
-    <Compile Include="Assets\project\Scripts\reactive.cs" />
     <Compile Include="Assets\project\inventory\Inventory.cs" />
     <Compile Include="Assets\project\inventory\InventoryManager.cs" />
     <Compile Include="Assets\project\inventory\Item.cs" />
+    <Compile Include="Assets\project\inventory\ItemOnDrag.cs" />
     <Compile Include="Assets\project\inventory\ItemOnWorld.cs" />
     <Compile Include="Assets\project\inventory\slot.cs" />
-    <Compile Include="Assets\source\AllSkyFree\AllSkyFree_Menu.cs" />
-    <Compile Include="Assets\source\Sepiroth\Demo\Scripts\CharacterController2D.cs" />
-    <Compile Include="Assets\source\Sepiroth\Demo\Scripts\FlyingPlayerController.cs" />
-    <Compile Include="Assets\source\Sepiroth\Demo\Scripts\FollowCamera.cs" />
-    <Compile Include="Assets\source\Sepiroth\Demo\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\source\Sepiroth\Demo\Scripts\SceneSelecter.cs" />
-    <None Include="Assets\source\Sepiroth\LICENSE.txt" />
-    <None Include="Assets\source\BayatGames\Free Platform Game Assets\Readme.txt" />
-    <None Include="Assets\source\AllSkyFree\AllSkyFree_Readme.txt" />
-    <None Include="Assets\source\Sepiroth\README.txt" />
+    <Compile Include="Assets\resource\AllSkyFree\AllSkyFree_Menu.cs" />
+    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\FlyingPlayerController.cs" />
+    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\FollowCamera.cs" />
+    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\SceneSelecter.cs" />
+    <None Include="Assets\resource\Sepiroth\LICENSE.txt" />
+    <None Include="Assets\resource\BayatGames\Free Platform Game Assets\Readme.txt" />
+    <None Include="Assets\resource\AllSkyFree\AllSkyFree_Readme.txt" />
+    <None Include="Assets\resource\Sepiroth\README.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/unity本体/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
