@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+    public Slider slider;
+    public float hp=100;
     public float normalspeed = 5;
     //public float rushspeed = 15;
     public float jumpSpeed = 30;
     public bool ifground = true;
-    //public float gravity = 3.0f;
     public bool canleft = true;
     public bool canright = true;
-    //public bool canrush = true;
     public bool canjump = true;
-    //public bool flyrush = false;
+    public bool canAttract = false;
     public bool cancrouch = false;
     public bool[] chip=new bool[10];
 
@@ -21,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     Animator animator;
     Rigidbody2D rigidbody;
     int isflip = 0;
+    bool iscrouch;
     float rushCoolTime;//冲刺时间
     float coolrush = 1;//冲刺冷却
     bool rushflag = false;
@@ -35,15 +37,44 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hpManager();
+        chipUpdate();
         CheckOnTheGround();
         //if (canrush==true) Rush();
         if (rushflag==false) Run();
         if (canjump==true&&rushflag==false) Jump();
         if (cancrouch) Crouch();
+        if (canAttract) Attract();
+    }
+    void hpManager()
+    {
+        slider.value = hp / 100.0f;
+    }
+    void chipUpdate()
+    {
+        if (chip[0] == true) canleft = true; else canleft = false;
+        if (chip[1] == true) canright = true;else canright = false;
+        if (chip[2] == true) canjump = true;else canjump = false;
+        if (chip[3] == true) cancrouch = true;else cancrouch = false;
+        if (chip[4] == true) canAttract = true;else canAttract = false;
+    }
+    void Attract()
+    {
+
     }
     void Crouch()
     {
-        animator.SetBool("crouch", true);
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            iscrouch = !iscrouch;
+            animator.SetBool("Crouch", iscrouch);
+            Vector2 temp = GetComponent<CapsuleCollider2D>().size;
+            if (iscrouch==true)
+            GetComponent<CapsuleCollider2D>().size = new Vector2(temp.x, temp.y / 2);
+            else
+                GetComponent<CapsuleCollider2D>().size = new Vector2(temp.x, temp.y *2);
+            //改变碰撞体积
+        }
     }
     /*void Rush()
     {

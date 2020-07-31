@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - ground
-  - 
+  - background
   - 
   - 
   - 
@@ -42,6 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3394665109
+    locked: 0
+  - name: Ground
+    uniqueID: 2142932061
+    locked: 0
   - name: item
     uniqueID: 3809375015
+    locked: 0
+  - name: Player
+    uniqueID: 2453539025
+    locked: 0
+  - name: NPC
+    uniqueID: 2014624391
     locked: 0

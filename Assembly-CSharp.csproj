@@ -63,9 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\project\Scripts\ChipManager.cs" />
     <Compile Include="Assets\project\Scripts\MoveBag.cs" />
     <Compile Include="Assets\project\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\project\Scripts\box.cs" />
     <Compile Include="Assets\project\Scripts\followPlayer.cs" />
     <Compile Include="Assets\project\inventory\Inventory.cs" />
     <Compile Include="Assets\project\inventory\InventoryManager.cs" />
