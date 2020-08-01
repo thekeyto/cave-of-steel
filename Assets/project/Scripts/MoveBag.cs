@@ -14,16 +14,4 @@ public class MoveBag : MonoBehaviour,IDragHandler
     {
         currentRect.anchoredPosition += eventData.delta;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

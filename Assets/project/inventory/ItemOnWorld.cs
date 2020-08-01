@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ItemOnWorld : MonoBehaviour
 {
     public Item thisItem;
     public Inventory playerInventory;
+    public Canvas text;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        text.gameObject.SetActive(true);
         if (collision.gameObject.CompareTag("Player"))
         {
             AddNewItem();
             Destroy(gameObject);
         }
+    }
+    private void Update()
+    {
+        text.gameObject.SetActive(false);
     }
     public void AddNewItem()
     {

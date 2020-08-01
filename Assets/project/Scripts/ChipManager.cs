@@ -5,12 +5,6 @@ using UnityEngine;
 public class ChipManager : MonoBehaviour
 {
     public Inventory playerbag;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         for(int i=0;i<5;i++)

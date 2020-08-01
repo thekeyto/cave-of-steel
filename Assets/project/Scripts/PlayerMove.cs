@@ -6,29 +6,34 @@ using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
     public Slider slider;
+    public Canvas mybag;
     public float hp=100;
     public float normalspeed = 5;
     //public float rushspeed = 15;
     public float jumpSpeed = 30;
-    public bool ifground = true;
-    public bool canleft = true;
-    public bool canright = true;
-    public bool canjump = true;
-    public bool canAttract = false;
-    public bool cancrouch = false;
+    public bool ifground;
     public bool[] chip=new bool[10];
+    public float hitBoxCd;
 
+    private PolygonCollider2D polygonCollider;
     CapsuleCollider2D collider;
     Animator animator;
     Rigidbody2D rigidbody;
     int isflip = 0;
     bool iscrouch;
-    float rushCoolTime;//冲刺时间
-    float coolrush = 1;//冲刺冷却
+    bool canleft;
+    bool canright;
+    bool canjump;
+    bool ifbag=false;
+    bool canAttract;
+    bool cancrouch;
+    //float rushCoolTime;//冲刺时间
+    //float coolrush = 1;//冲刺冷却
     bool rushflag = false;
     // Start is called before the first frame update
     void Start()
     {
+        polygonCollider = GetComponent<PolygonCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         collider = GetComponent<CapsuleCollider2D>();
@@ -39,12 +44,31 @@ public class PlayerMove : MonoBehaviour
     {
         hpManager();
         chipUpdate();
+        openBag();
         CheckOnTheGround();
         //if (canrush==true) Rush();
-        if (rushflag==false) Run();
+        Run();
         if (canjump==true&&rushflag==false) Jump();
         if (cancrouch) Crouch();
         if (canAttract) Attract();
+    }
+    public void takeDamage(float damage)
+    {
+        hp -= damage;
+        polygonCollider.enabled = false;
+        StartCoroutine(ShowPlayerHitBox());
+    }
+
+    IEnumerator ShowPlayerHitBox()
+    {
+        yield return new WaitForSeconds(hitBoxCd);
+        polygonCollider.enabled = true;
+    }
+    void openBag()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            mybag.gameObject.SetActive(ifbag);
+        ifbag = !ifbag;
     }
     void hpManager()
     {
@@ -53,8 +77,8 @@ public class PlayerMove : MonoBehaviour
     void chipUpdate()
     {
         if (chip[0] == true) canleft = true; else canleft = false;
-        if (chip[1] == true) canright = true;else canright = false;
-        if (chip[2] == true) canjump = true;else canjump = false;
+        if (chip[1] == true) canright = true; else canright = false;
+        if (chip[2] == true) canjump = true; else canjump = false;
         if (chip[3] == true) cancrouch = true;else cancrouch = false;
         if (chip[4] == true) canAttract = true;else canAttract = false;
     }

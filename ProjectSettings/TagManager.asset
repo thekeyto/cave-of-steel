@@ -16,8 +16,8 @@ TagManager:
   - 
   - ground
   - background
-  - 
-  - 
+  - spike
+  - trans
   - 
   - 
   - 
@@ -56,4 +56,10 @@ TagManager:
     locked: 0
   - name: NPC
     uniqueID: 2014624391
+    locked: 0
+  - name: Spike
+    uniqueID: 2316411651
+    locked: 0
+  - name: trans
+    uniqueID: 2336478603
     locked: 0
