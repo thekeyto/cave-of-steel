@@ -7,11 +7,11 @@ public class ItemOnWorld : MonoBehaviour
     public Item thisItem;
     public Inventory playerInventory;
     public Canvas text;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerStay2D(Collider collision)
     {
         text.gameObject.SetActive(true);
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.R))
         {
             AddNewItem();
             Destroy(gameObject);
@@ -25,8 +25,6 @@ public class ItemOnWorld : MonoBehaviour
     {
         if (!playerInventory.itemlist.Contains(thisItem))
         {
-            //playerInventory.itemlist.Add(thisItem);
-            //InventoryManager.CreateNewItem(thisItem);
             for(int i=0;i<playerInventory.itemlist.Count;i++)
             {
                 if (playerInventory.itemlist[i]==null)
