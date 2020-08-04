@@ -65,9 +65,13 @@
   <ItemGroup>
     <Compile Include="Assets\Spike.cs" />
     <Compile Include="Assets\project\Scripts\ChipManager.cs" />
+    <Compile Include="Assets\project\Scripts\Conveyer.cs" />
     <Compile Include="Assets\project\Scripts\MoveBag.cs" />
     <Compile Include="Assets\project\Scripts\NPCwords.cs" />
     <Compile Include="Assets\project\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\project\Scripts\box.cs" />
+    <Compile Include="Assets\project\Scripts\chipPrefab.cs" />
+    <Compile Include="Assets\project\Scripts\elevator.cs" />
     <Compile Include="Assets\project\Scripts\followPlayer.cs" />
     <Compile Include="Assets\project\Scripts\magnetic.cs" />
     <Compile Include="Assets\project\inventory\Inventory.cs" />

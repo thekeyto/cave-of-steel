@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     public Slider slider;
     public Canvas mybag;
+    public int maxJumpTime = 1;
     public float hp=100;
     public float normalspeed = 5;
     //public float rushspeed = 15;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     Animator animator;
     Rigidbody2D rigidbody;
     int isflip = 0;
+    int nowjump=0;
     bool iscrouch;
     bool canleft;
     bool canright;
@@ -27,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     bool ifbag=false;
     bool canAttract;
     bool cancrouch;
+    Vector2 tempcolliderSize;
     //float rushCoolTime;//冲刺时间
     //float coolrush = 1;//冲刺冷却
     bool rushflag = false;
@@ -37,11 +40,13 @@ public class PlayerMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         collider = GetComponent<CapsuleCollider2D>();
+        tempcolliderSize = collider.size;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(1);
         hpManager();
         chipUpdate();
         openBag();
@@ -88,16 +93,18 @@ public class PlayerMove : MonoBehaviour
     }
     void Crouch()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            iscrouch = !iscrouch;
-            animator.SetBool("Crouch", iscrouch);
-            Vector2 temp = GetComponent<CapsuleCollider2D>().size;
-            if (iscrouch==true)
-            GetComponent<CapsuleCollider2D>().size = new Vector2(temp.x, temp.y / 2);
-            else
-                GetComponent<CapsuleCollider2D>().size = new Vector2(temp.x, temp.y *2);
+            iscrouch = true;
+            animator.SetBool("Crouch", true);
+            GetComponent<CapsuleCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y / 2);
             //改变碰撞体积
+        }
+        else
+        {
+            iscrouch = false;
+            animator.SetBool("Crouch", false);
+            GetComponent<CapsuleCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y);
         }
     }
     /*void Rush()
@@ -132,13 +139,15 @@ public class PlayerMove : MonoBehaviour
     bool CheckOnTheGround()
     {
         ifground = collider.IsTouchingLayers(LayerMask.GetMask("ground"));
+        if (ifground == true) nowjump = maxJumpTime;
         //if (ifground == true) flyrush = false;
         return ifground;
     }
     void Jump()
     {
-        if (Input.GetButtonDown("Jump")&&ifground==true)
+        if (Input.GetButtonDown("Jump")&&nowjump>0)
         {
+            nowjump--;
             Vector2 jumpvel = new Vector2(rigidbody.velocity.x, jumpSpeed);
             rigidbody.velocity = Vector2.up * jumpvel;
             animator.SetBool("Jump", true);
@@ -155,12 +164,14 @@ public class PlayerMove : MonoBehaviour
             Vector2 playervel = new Vector2(v * normalspeed, rigidbody.velocity.y);
             rigidbody.velocity = playervel;
             Flip(v);
-            animator.SetBool("Run", true);
+            if (!iscrouch) animator.SetBool("Run", true);
+            else animator.SetBool("crouchwalk", true);
         }
         else
         {
             animator.SetBool("Idle", true);
             animator.SetBool("Run", false);
+            animator.SetBool("crouchwalk", false);
         }
     }
     void Flip(float v)

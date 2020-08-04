@@ -5,5 +5,4 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public List<Item> itemlist = new List<Item>();
-
 }
