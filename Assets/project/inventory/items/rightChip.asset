@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: rightChip
   m_EditorClassIdentifier: 
   itemName: rightChip
-  itemImage: {fileID: 21300000, guid: 3016a57ecc98e9e46b7a110ddd486ee9, type: 3}
-  itemHeld: 13
+  itemImage: {fileID: 21300000, guid: a37af80347d7b954887d84cfac21fcd8, type: 3}
+  NotUseImage: {fileID: 21300000, guid: c48bd393112fa44459fe6fb00b437cd5, type: 3}
+  itemHeld: 1
   isuse: 0
   property: 1
-  itemInfo: 
+  rotation: 180
+  itemInfo: you can walk right
   equip: 0

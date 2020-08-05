@@ -17,12 +17,14 @@ public class PlayerMove : MonoBehaviour
     public float hitBoxCd;
 
     private PolygonCollider2D polygonCollider;
-    CapsuleCollider2D collider;
+    AudioSource audio;
+    BoxCollider2D collider;
     Animator animator;
     Rigidbody2D rigidbody;
     int isflip = 0;
     int nowjump=0;
     bool iscrouch;
+    public bool isboxnearBy;
     bool canleft;
     bool canright;
     bool canjump;
@@ -36,26 +38,36 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         polygonCollider = GetComponent<PolygonCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        collider = GetComponent<CapsuleCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         tempcolliderSize = collider.size;
+        iscrouch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(1);
+        float v = Input.GetAxis("Horizontal");
         hpManager();
         chipUpdate();
         openBag();
         CheckOnTheGround();
         //if (canrush==true) Rush();
-        Run();
-        if (canjump==true&&rushflag==false) Jump();
-        if (cancrouch) Crouch();
+        Run(v);
+        if (Input.GetButtonDown("Jump") && canjump ==true) Jump();
+        if (cancrouch) Crouch(false);
         if (canAttract) Attract();
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            isboxnearBy = true;
+        }
+        else isboxnearBy = false;
     }
     public void takeDamage(float damage)
     {
@@ -68,6 +80,13 @@ public class PlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(hitBoxCd);
         polygonCollider.enabled = true;
+    }
+    public void act(int property)
+    {
+        if (property == 0) Run(-1);
+        else if (property == 1) Run(1);
+        else if (property == 2) Jump();
+        else if (property == 3) Crouch(true);
     }
     void openBag()
     {
@@ -91,20 +110,21 @@ public class PlayerMove : MonoBehaviour
     {
 
     }
-    void Crouch()
+    void Crouch(bool flag)
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || flag == true) iscrouch = !iscrouch;
+        if (iscrouch==true)
         {
-            iscrouch = true;
             animator.SetBool("Crouch", true);
-            GetComponent<CapsuleCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y / 2);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0, -tempcolliderSize.y/4);
+            GetComponent<BoxCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y / 2);
             //改变碰撞体积
         }
         else
         {
-            iscrouch = false;
             animator.SetBool("Crouch", false);
-            GetComponent<CapsuleCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+            GetComponent<BoxCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y);
         }
     }
     /*void Rush()
@@ -138,37 +158,42 @@ public class PlayerMove : MonoBehaviour
     }*/
     bool CheckOnTheGround()
     {
-        ifground = collider.IsTouchingLayers(LayerMask.GetMask("ground"));
+        ifground = collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
         if (ifground == true) nowjump = maxJumpTime;
         //if (ifground == true) flyrush = false;
         return ifground;
     }
     void Jump()
     {
-        if (Input.GetButtonDown("Jump")&&nowjump>0)
+        if (nowjump>0)
         {
             nowjump--;
             Vector2 jumpvel = new Vector2(rigidbody.velocity.x, jumpSpeed);
             rigidbody.velocity = Vector2.up * jumpvel;
             animator.SetBool("Jump", true);
         }
-        else animator.SetBool("Jump", false);
+        animator.SetBool("Jump", false);
     }
-    void Run()
+    void Run(float v)
     {
-        float v = Input.GetAxis("Horizontal");
         if (v != 0)
         {
+            audio.Play();
             if (v < 0 && canleft == false) return;
             if (v > 0 && canright == false) return;
             Vector2 playervel = new Vector2(v * normalspeed, rigidbody.velocity.y);
             rigidbody.velocity = playervel;
             Flip(v);
-            if (!iscrouch) animator.SetBool("Run", true);
-            else animator.SetBool("crouchwalk", true);
+            if (iscrouch) animator.SetBool("crouchwalk", true);
+            else
+            if (isboxnearBy) animator.SetBool("pushBox", true);
+            else animator.SetBool("Run", true);
+            if (!isboxnearBy) animator.SetBool("pushBox", false);
         }
         else
         {
+            audio.Stop();
+            animator.SetBool("pushBox", false);
             animator.SetBool("Idle", true);
             animator.SetBool("Run", false);
             animator.SetBool("crouchwalk", false);

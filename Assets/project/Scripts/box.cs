@@ -7,15 +7,28 @@ public class box : MonoBehaviour
     public Inventory playerBag;
     bool chipHeld = false;
     public chipPrefab ChipPrefab;
-    Item chip;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public Item chip;
+    public SpriteRenderer nowSprite;
+    public GameObject player;
+    private void Start()
     {
-        if (collision.CompareTag("boxwitharm"))
+        if (chip != null) chipHeld = true;
+        nowSprite = GetComponent<SpriteRenderer>();
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.E))
         {
-            gameObject.tag = "boxwitharm1";
+            Chip();
         }
     }
-    public void Chip()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("machineArm"))
+            collision.GetComponent<MachineArm>().chip.Add(chip);
+    }
+
+    void Chip()
     {
         if (chipHeld==false&&playerBag.itemlist[3]!=null)
         {
@@ -30,6 +43,21 @@ public class box : MonoBehaviour
             temp.y += 1.5f;
             Instantiate(ChipPrefab.itemlist[chip.property],transform.position,transform.rotation);
             chipHeld = false;
+            chip = null;
         }
+    }
+
+    public void whenOnChick()
+    {
+        if (chipHeld)
+        {
+            player.GetComponent<PlayerMove>().act(chip.property);
+            nowSprite.sprite = chip.itemImage;
+        }
+    }
+
+    private void Update()
+    {
+        nowSprite.sprite = chip.NotUseImage;
     }
 }

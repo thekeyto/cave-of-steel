@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: jumpChip
   m_EditorClassIdentifier: 
   itemName: jumpChip
-  itemImage: {fileID: -3085381186346249065, guid: 953d2013647e1fb479bf559fccb58994,
-    type: 3}
+  itemImage: {fileID: 21300000, guid: 544ac0fde9cf6364699897ac1a1aca40, type: 3}
+  NotUseImage: {fileID: 21300000, guid: 8c7fb21d166fa7e4698041e94524db7b, type: 3}
   itemHeld: 1
   isuse: 0
   property: 2
-  itemInfo: 
+  rotation: 270
+  itemInfo: you can jumo
   equip: 0

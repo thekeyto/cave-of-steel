@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: leftChip
   m_EditorClassIdentifier: 
   itemName: lefttrip
-  itemImage: {fileID: 21300000, guid: 031e51ee1cd91b04196c127b64fe2c95, type: 3}
+  itemImage: {fileID: 21300000, guid: cbabac29e498af24799b7cdce801e4cc, type: 3}
+  NotUseImage: {fileID: 21300000, guid: 9b0eca062bb9fac4daf0bb3bc51f063f, type: 3}
   itemHeld: 1
   isuse: 0
   property: 0
+  rotation: 360
   itemInfo: you can walk left
   equip: 1

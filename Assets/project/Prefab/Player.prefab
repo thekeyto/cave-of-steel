@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7078293553876843908}
   - component: {fileID: 7078293553876843906}
   - component: {fileID: 7078293553876843905}
-  - component: {fileID: 7078293553876843904}
+  - component: {fileID: 584203206}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -496,8 +496,9 @@ MonoBehaviour:
   ifground: 0
   chip: 00000000000000000000
   hitBoxCd: 0
---- !u!70 &7078293553876843904
-CapsuleCollider2D:
+  isboxnearBy: 0
+--- !u!61 &584203206
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -509,6 +510,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.21046448, y: -0.009150505}
-  m_Size: {x: 3.5843048, y: 6.1653605}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8588235, y: 6.147059}
+    newSize: {x: 6.56, y: 10.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.8588235, y: 6.147059}
+  m_EdgeRadius: 0

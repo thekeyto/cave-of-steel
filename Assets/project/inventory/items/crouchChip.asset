@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: crouchChip
   m_EditorClassIdentifier: 
   itemName: crouchChip
-  itemImage: {fileID: 1959960051128207467, guid: 953d2013647e1fb479bf559fccb58994,
-    type: 3}
+  itemImage: {fileID: 21300000, guid: 63732ca731aaf5d40bc42fac488ab703, type: 3}
+  NotUseImage: {fileID: 21300000, guid: 33968ff5ebf466044b9a9fc8404ffd6a, type: 3}
   itemHeld: 1
   isuse: 0
   property: 3
-  itemInfo: 
+  rotation: 90
+  itemInfo: you can crouch
   equip: 0

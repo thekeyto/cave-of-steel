@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class magnetic : MonoBehaviour
 {
-    public float magneticforce=3;
+    public float magneticforce=30;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "box")
+        if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce((transform.position - collision.transform.position) * magneticforce);
-            Debug.Log("magnetic");
+            Debug.Log(1);
+            collision.GetComponent<Rigidbody2D>().AddForce((transform.position - collision.transform.position)/Vector2.Distance(transform.position, collision.transform.position) * magneticforce);           
         }
     }
 }

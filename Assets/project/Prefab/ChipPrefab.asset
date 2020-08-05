@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChipPrefab
   m_EditorClassIdentifier: 
   itemlist:
-  - {fileID: 0}
+  - {fileID: 7723064911607507900, guid: 09c4521848eb8d845881e15f79130ea5, type: 3}
   - {fileID: 7723064911607507900, guid: 58004051192be0947b97787d63c38b48, type: 3}
   - {fileID: 0}
   - {fileID: 0}

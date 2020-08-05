@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Box
+  - boxwitharm
+  - machineArm
   layers:
   - Default
   - TransparentFX
@@ -15,13 +17,13 @@ TagManager:
   - UI
   - 
   - 
-  - ground
-  - background
-  - spike
+  - Ground
+  - Background
+  - Spike
   - trans
-  - 
-  - 
-  - 
+  - Box
+  - machineArm
+  - conveyer
   - 
   - 
   - 
@@ -43,7 +45,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
+  - name: Backround
     uniqueID: 3394665109
     locked: 0
   - name: Ground
@@ -63,4 +65,10 @@ TagManager:
     locked: 0
   - name: trans
     uniqueID: 2336478603
+    locked: 0
+  - name: machineArm
+    uniqueID: 1213693403
+    locked: 0
+  - name: Box
+    uniqueID: 4177404287
     locked: 0
