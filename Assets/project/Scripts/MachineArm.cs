@@ -13,9 +13,12 @@ public class MachineArm : MonoBehaviour
     float rotateTime = 3;
     bool isU=false;
     public int nowChip = 0;
+    AudioSource audio;
+
     private void Start()
     {
         isU = false;
+        audio = GetComponent<AudioSource>();
         Box.GetComponent<CapsuleCollider2D>().enabled = isU;
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,6 +37,7 @@ public class MachineArm : MonoBehaviour
     {
         if (chip.Count>1)
         {
+            if (!audio.isPlaying) audio.Play();
             Arm.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * speed);
             //if (Arm.transform.rotation.z > 360) Arm.transform.rotation = Quaternion.Euler(0.0f, 0.0f, Arm.transform.rotation.z - 360);
             //else if (Arm.transform.rotation.z < 0) Arm.transform.rotation = Quaternion.Euler(0.0f, 0.0f, Arm.transform.rotation.z + 360);

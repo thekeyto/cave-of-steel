@@ -15,9 +15,21 @@ public class PlayerMove : MonoBehaviour
     public bool ifground;
     public bool[] chip=new bool[10];
     public float hitBoxCd;
+    public Inventory playerbag;
+    public RuntimeAnimatorController withoutLimitor;
+    public RuntimeAnimatorController limitor;
+    public Transform rebirthPoint;
+    public AudioClip jumpAudio;
+    public AudioClip landAudio;
+    public AudioClip dieAudio;
+    public AudioClip walkAudio;
 
+    float keeprun;
     private PolygonCollider2D polygonCollider;
-    AudioSource audio;
+    AudioSource auJump;
+    AudioSource auLand;
+    AudioSource auWalk;
+    AudioSource auDie;
     BoxCollider2D collider;
     Animator animator;
     Rigidbody2D rigidbody;
@@ -31,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     bool ifbag=false;
     bool canAttract;
     bool cancrouch;
+    float currentAudioTime;
     Vector2 tempcolliderSize;
     //float rushCoolTime;//冲刺时间
     //float coolrush = 1;//冲刺冷却
@@ -38,25 +51,36 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        currentAudioTime = 0;
+        keeprun = 0;
         polygonCollider = GetComponent<PolygonCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
         tempcolliderSize = collider.size;
         iscrouch = false;
+        notlimit();
+        auJump=gameObject.AddComponent<AudioSource>() as AudioSource;
+        auLand=gameObject.AddComponent<AudioSource>() as AudioSource;
+        auWalk=gameObject.AddComponent<AudioSource>() as AudioSource;
+        auDie=gameObject.AddComponent<AudioSource>() as AudioSource;
+        //代码关键点2：GetComponents方法获得所有该GameObj上的AudioSource对象。这样就可以分别进行控制了。
+        auJump.clip = jumpAudio; auJump.loop = false;
+        auLand.clip = landAudio; auLand.loop = false;
+        auWalk.clip = walkAudio; auWalk.loop = false;
+        auDie.clip = dieAudio; auDie.loop = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         float v = Input.GetAxis("Horizontal");
-        hpManager();
+        //hpManager();
         chipUpdate();
         openBag();
         CheckOnTheGround();
         //if (canrush==true) Rush();
-        Run(v);
+        Run(v,keeprun);
         if (Input.GetButtonDown("Jump") && canjump ==true) Jump();
         if (cancrouch) Crouch(false);
         if (canAttract) Attract();
@@ -75,16 +99,31 @@ public class PlayerMove : MonoBehaviour
         polygonCollider.enabled = false;
         StartCoroutine(ShowPlayerHitBox());
     }
+    public void ReBirth()
+    {
+        animator.SetBool("Die", true);
+        GetComponent<AudioSource>().clip = dieAudio;
+        GetComponent<AudioSource>().loop = false;
+        if (!auDie.isPlaying) auDie.Play();
+        StartCoroutine(waitForDieTime());
+    }
 
+    IEnumerator waitForDieTime()
+    {
+        yield return new WaitForSeconds(2.2f);
+        animator.SetBool("Die", false);
+        transform.position = rebirthPoint.position;
+    }
     IEnumerator ShowPlayerHitBox()
     {
         yield return new WaitForSeconds(hitBoxCd);
         polygonCollider.enabled = true;
     }
-    public void act(int property)
+    public void act(int property,bool ifchip)
     {
-        if (property == 0) Run(-1);
-        else if (property == 1) Run(1);
+        if (property == 0)
+            { if (ifchip == true) keeprun = -1; else keeprun = 0; }
+        else if (property == 1) { if (ifchip == true) keeprun = 1; else keeprun = 0; }
         else if (property == 2) Jump();
         else if (property == 3) Crouch(true);
     }
@@ -94,10 +133,10 @@ public class PlayerMove : MonoBehaviour
             mybag.gameObject.SetActive(ifbag);
         ifbag = !ifbag;
     }
-    void hpManager()
+   /* void hpManager()
     {
         slider.value = hp / 100.0f;
-    }
+    }*/
     void chipUpdate()
     {
         if (chip[0] == true) canleft = true; else canleft = false;
@@ -156,8 +195,25 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("Run", false);
         }
     }*/
+
+    public void limit()
+    {
+        animator.runtimeAnimatorController = limitor;
+        for (int i = 9; i > 3; i--)
+            playerbag.itemlist.Remove(playerbag.itemlist[i]);
+    }
+    public void notlimit()
+    {
+        animator.runtimeAnimatorController = withoutLimitor;
+        for (int i = playerbag.itemlist.Count; i <= 9; i++)
+            playerbag.itemlist.Add(null);
+    }
     bool CheckOnTheGround()
     {
+        if (ifground==false&&collider.IsTouchingLayers(LayerMask.GetMask("Ground"))==true)
+        {
+            if (!auLand.isPlaying) auLand.Play();
+        }
         ifground = collider.IsTouchingLayers(LayerMask.GetMask("Ground"));
         if (ifground == true) nowjump = maxJumpTime;
         //if (ifground == true) flyrush = false;
@@ -167,6 +223,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (nowjump>0)
         {
+            if (!auJump.isPlaying)auJump.Play();
             nowjump--;
             Vector2 jumpvel = new Vector2(rigidbody.velocity.x, jumpSpeed);
             rigidbody.velocity = Vector2.up * jumpvel;
@@ -174,11 +231,12 @@ public class PlayerMove : MonoBehaviour
         }
         animator.SetBool("Jump", false);
     }
-    void Run(float v)
+    void Run(float keeprun,float v)
     {
+        if (keeprun != 0) v = keeprun;
         if (v != 0)
         {
-            audio.Play();
+            if (!auWalk.isPlaying) auWalk.Play();
             if (v < 0 && canleft == false) return;
             if (v > 0 && canright == false) return;
             Vector2 playervel = new Vector2(v * normalspeed, rigidbody.velocity.y);
@@ -192,7 +250,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            audio.Stop();
+            auWalk.Pause();
             animator.SetBool("pushBox", false);
             animator.SetBool("Idle", true);
             animator.SetBool("Run", false);

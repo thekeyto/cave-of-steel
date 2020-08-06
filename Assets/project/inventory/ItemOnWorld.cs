@@ -10,7 +10,7 @@ public class ItemOnWorld : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         text.gameObject.SetActive(true);
-        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.R))
+        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.O))
         {
             AddNewItem();
             Destroy(gameObject);

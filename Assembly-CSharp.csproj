@@ -75,8 +75,10 @@
     <Compile Include="Assets\project\Scripts\chipPrefab.cs" />
     <Compile Include="Assets\project\Scripts\elevator.cs" />
     <Compile Include="Assets\project\Scripts\followPlayer.cs" />
+    <Compile Include="Assets\project\Scripts\limitor.cs" />
     <Compile Include="Assets\project\Scripts\magnetic.cs" />
     <Compile Include="Assets\project\Scripts\playerManager.cs" />
+    <Compile Include="Assets\project\Scripts\savePoint.cs" />
     <Compile Include="Assets\project\inventory\Inventory.cs" />
     <Compile Include="Assets\project\inventory\InventoryManager.cs" />
     <Compile Include="Assets\project\inventory\Item.cs" />
@@ -84,15 +86,7 @@
     <Compile Include="Assets\project\inventory\ItemOnWorld.cs" />
     <Compile Include="Assets\project\inventory\slot.cs" />
     <Compile Include="Assets\resource\AllSkyFree\AllSkyFree_Menu.cs" />
-    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\CharacterController2D.cs" />
-    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\FlyingPlayerController.cs" />
-    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\FollowCamera.cs" />
-    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\resource\Sepiroth\Demo\Scripts\SceneSelecter.cs" />
-    <None Include="Assets\resource\Sepiroth\LICENSE.txt" />
-    <None Include="Assets\resource\BayatGames\Free Platform Game Assets\Readme.txt" />
     <None Include="Assets\resource\AllSkyFree\AllSkyFree_Readme.txt" />
-    <None Include="Assets\resource\Sepiroth\README.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/unity本体/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -10,14 +10,16 @@ public class box : MonoBehaviour
     public Item chip;
     public SpriteRenderer nowSprite;
     public GameObject player;
+    bool ifChip;
     private void Start()
     {
+        ifChip = false;
         if (chip != null) chipHeld = true;
         nowSprite = GetComponent<SpriteRenderer>();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.E))
+        if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.Q))
         {
             Chip();
         }
@@ -38,6 +40,7 @@ public class box : MonoBehaviour
             InventoryManager.RefreshItem();
         }
         else
+        if (chipHeld==true)
         {
             Vector2 temp = transform.position;
             temp.y += 1.5f;
@@ -51,13 +54,17 @@ public class box : MonoBehaviour
     {
         if (chipHeld)
         {
-            player.GetComponent<PlayerMove>().act(chip.property);
+            ifChip = !ifChip;
+            player.GetComponent<PlayerMove>().act(chip.property,ifChip);
+            if (ifChip==true)
             nowSprite.sprite = chip.itemImage;
+            else nowSprite.sprite = chip.NotUseImage;
         }
     }
-
     private void Update()
     {
-        nowSprite.sprite = chip.NotUseImage;
+        if (chipHeld==true)
+        if (ifChip == true) nowSprite.sprite = chip.itemImage;
+        else nowSprite.sprite = chip.NotUseImage;
     }
 }

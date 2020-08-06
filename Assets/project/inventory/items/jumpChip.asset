@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: jumpChip
   itemImage: {fileID: 21300000, guid: 544ac0fde9cf6364699897ac1a1aca40, type: 3}
   NotUseImage: {fileID: 21300000, guid: 8c7fb21d166fa7e4698041e94524db7b, type: 3}
-  itemHeld: 1
+  itemHeld: 2
   isuse: 0
   property: 2
   rotation: 270

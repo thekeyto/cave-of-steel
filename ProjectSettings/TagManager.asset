@@ -51,6 +51,15 @@ TagManager:
   - name: Ground
     uniqueID: 2142932061
     locked: 0
+  - name: machineArm
+    uniqueID: 1213693403
+    locked: 0
+  - name: limitor
+    uniqueID: 448401321
+    locked: 0
+  - name: Spike
+    uniqueID: 2316411651
+    locked: 0
   - name: item
     uniqueID: 3809375015
     locked: 0
@@ -60,14 +69,8 @@ TagManager:
   - name: NPC
     uniqueID: 2014624391
     locked: 0
-  - name: Spike
-    uniqueID: 2316411651
-    locked: 0
   - name: trans
     uniqueID: 2336478603
-    locked: 0
-  - name: machineArm
-    uniqueID: 1213693403
     locked: 0
   - name: Box
     uniqueID: 4177404287

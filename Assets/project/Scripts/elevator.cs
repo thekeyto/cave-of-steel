@@ -5,7 +5,8 @@ using UnityEngine;
 public class elevator : MonoBehaviour
 {
     public float speed;
-    public float time;
+    public float up;
+    public float down;
     public int forward;
     Rigidbody2D rigidbody;
     private void Start()
@@ -16,11 +17,9 @@ public class elevator : MonoBehaviour
     {
         Vector2 temp = new Vector2(0, speed*forward);
         rigidbody.velocity = temp;
-        StartCoroutine(waitforElevator());
-    }
-    IEnumerator waitforElevator()
-    {
-        yield return new WaitForSeconds(time);
-        forward *= -1;
+        if ((Mathf.Abs(transform.position.y-up)<=0.5&&forward==1)|| (Mathf.Abs(transform.position.y - down) <= 0.5&&forward==-1))
+        {
+            forward *= -1;
+        }
     }
 }

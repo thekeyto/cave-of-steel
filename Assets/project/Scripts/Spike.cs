@@ -8,7 +8,7 @@ public class Spike : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")&&collision.GetType().ToString()== "UnityEngine.PolygonCollider2D")
-            collision.gameObject.GetComponent<PlayerMove>().takeDamage(damage);
+        if (collision.CompareTag("Player"))
+            collision.gameObject.GetComponent<PlayerMove>().ReBirth();
     }
 }

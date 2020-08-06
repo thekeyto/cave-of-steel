@@ -6,11 +6,10 @@ public class playerManager : MonoBehaviour
 {
     public Transform reBirth;
     public GameObject player;
-
-    GameObject nowplayer;
     void Start()
     {
-        nowplayer= Instantiate(player, reBirth) as GameObject;
+        player = GameObject.FindWithTag("Player");
+        player.transform.position = reBirth.position;
     }
 
     // Update is called once per frame
@@ -18,8 +17,8 @@ public class playerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GameObject.Destroy(nowplayer);
-            nowplayer = Instantiate(player, reBirth) as GameObject;
+            Debug.Log("Rebirth");
+            player.transform.position = reBirth.position;
         }
     }
 }

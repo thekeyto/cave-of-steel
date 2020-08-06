@@ -9,7 +9,6 @@ public class magnetic : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(1);
             collision.GetComponent<Rigidbody2D>().AddForce((transform.position - collision.transform.position)/Vector2.Distance(transform.position, collision.transform.position) * magneticforce);           
         }
     }

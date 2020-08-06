@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45a42a82cc011240819cbfcebdc9d3d, type: 3}
   m_Name: uChip
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: uChip
   itemImage: {fileID: 21300000, guid: 796db62953775124292fdde848d91cd1, type: 3}
   NotUseImage: {fileID: 21300000, guid: f71aa125b7d25be46b94e692434810a8, type: 3}
   itemHeld: 1
