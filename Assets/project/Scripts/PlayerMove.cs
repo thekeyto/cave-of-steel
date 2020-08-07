@@ -43,7 +43,6 @@ public class PlayerMove : MonoBehaviour
     bool ifbag=false;
     bool canAttract;
     bool cancrouch;
-    float currentAudioTime;
     Vector2 tempcolliderSize;
     //float rushCoolTime;//冲刺时间
     //float coolrush = 1;//冲刺冷却
@@ -51,7 +50,6 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentAudioTime = 0;
         keeprun = 0;
         polygonCollider = GetComponent<PolygonCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -65,9 +63,9 @@ public class PlayerMove : MonoBehaviour
         auWalk=gameObject.AddComponent<AudioSource>() as AudioSource;
         auDie=gameObject.AddComponent<AudioSource>() as AudioSource;
         //代码关键点2：GetComponents方法获得所有该GameObj上的AudioSource对象。这样就可以分别进行控制了。
-        auJump.clip = jumpAudio; auJump.loop = false;
+        auJump.clip = jumpAudio; auJump.loop = false;auJump.volume = 0.3f;
         auLand.clip = landAudio; auLand.loop = false;
-        auWalk.clip = walkAudio; auWalk.loop = false;
+        auWalk.clip = walkAudio; auWalk.loop = false;auWalk.volume = 0.3f;
         auDie.clip = dieAudio; auDie.loop = false;
     }
 
@@ -102,8 +100,6 @@ public class PlayerMove : MonoBehaviour
     public void ReBirth()
     {
         animator.SetBool("Die", true);
-        GetComponent<AudioSource>().clip = dieAudio;
-        GetComponent<AudioSource>().loop = false;
         if (!auDie.isPlaying) auDie.Play();
         StartCoroutine(waitForDieTime());
     }
@@ -139,11 +135,18 @@ public class PlayerMove : MonoBehaviour
     }*/
     void chipUpdate()
     {
-        if (chip[0] == true) canleft = true; else canleft = false;
-        if (chip[1] == true) canright = true; else canright = false;
-        if (chip[2] == true) canjump = true; else canjump = false;
-        if (chip[3] == true) cancrouch = true;else cancrouch = false;
-        if (chip[4] == true) canAttract = true;else canAttract = false;
+        if (animator.runtimeAnimatorController == limitor)
+        {
+            if (chip[0] == true) canleft = true; else canleft = false;
+            if (chip[1] == true) canright = true; else canright = false;
+            if (chip[2] == true) canjump = true; else canjump = false;
+            if (chip[3] == true) cancrouch = true; else cancrouch = false;
+            if (chip[4] == true) canAttract = true; else canAttract = false;
+        }
+        else
+        {
+            canleft = true; canright = true; canjump = true; cancrouch = true; canAttract = true;
+        }
     }
     void Attract()
     {

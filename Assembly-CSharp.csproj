@@ -78,6 +78,7 @@
     <Compile Include="Assets\project\Scripts\limitor.cs" />
     <Compile Include="Assets\project\Scripts\magnetic.cs" />
     <Compile Include="Assets\project\Scripts\playerManager.cs" />
+    <Compile Include="Assets\project\Scripts\saveData.cs" />
     <Compile Include="Assets\project\Scripts\savePoint.cs" />
     <Compile Include="Assets\project\inventory\Inventory.cs" />
     <Compile Include="Assets\project\inventory\InventoryManager.cs" />
