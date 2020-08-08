@@ -6,8 +6,8 @@ public class Conveyer : MonoBehaviour
 {
     public float force;
     public int forward;
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0) * forward);
+        collision.rigidbody.AddForce(new Vector2(force, 0) * forward);
     }
 }

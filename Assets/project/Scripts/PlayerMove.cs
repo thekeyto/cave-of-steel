@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     public AudioClip landAudio;
     public AudioClip dieAudio;
     public AudioClip walkAudio;
+    public bool limitted;
 
     float keeprun;
     private PolygonCollider2D polygonCollider;
@@ -51,18 +52,19 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         keeprun = 0;
+        limitted = false;
         polygonCollider = GetComponent<PolygonCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
         tempcolliderSize = collider.size;
         iscrouch = false;
-        notlimit();
+        animator.runtimeAnimatorController = withoutLimitor;
+        limitted = false;
         auJump=gameObject.AddComponent<AudioSource>() as AudioSource;
         auLand=gameObject.AddComponent<AudioSource>() as AudioSource;
         auWalk=gameObject.AddComponent<AudioSource>() as AudioSource;
         auDie=gameObject.AddComponent<AudioSource>() as AudioSource;
-        //代码关键点2：GetComponents方法获得所有该GameObj上的AudioSource对象。这样就可以分别进行控制了。
         auJump.clip = jumpAudio; auJump.loop = false;auJump.volume = 0.3f;
         auLand.clip = landAudio; auLand.loop = false;
         auWalk.clip = walkAudio; auWalk.loop = false;auWalk.volume = 0.3f;
@@ -72,6 +74,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (animator.runtimeAnimatorController == limitor) Debug.Log("limit");
         float v = Input.GetAxis("Horizontal");
         //hpManager();
         chipUpdate();
@@ -83,9 +86,9 @@ public class PlayerMove : MonoBehaviour
         if (cancrouch) Crouch(false);
         if (canAttract) Attract();
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Box"))
+        if (collision.gameObject.CompareTag("Box")&&transform.position.y<collision.transform.position.y)
         {
             isboxnearBy = true;
         }
@@ -109,6 +112,7 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
         animator.SetBool("Die", false);
         transform.position = rebirthPoint.position;
+        if (limitted == false) notlimit(); else limit();
     }
     IEnumerator ShowPlayerHitBox()
     {
@@ -135,18 +139,11 @@ public class PlayerMove : MonoBehaviour
     }*/
     void chipUpdate()
     {
-        if (animator.runtimeAnimatorController == limitor)
-        {
             if (chip[0] == true) canleft = true; else canleft = false;
             if (chip[1] == true) canright = true; else canright = false;
             if (chip[2] == true) canjump = true; else canjump = false;
             if (chip[3] == true) cancrouch = true; else cancrouch = false;
             if (chip[4] == true) canAttract = true; else canAttract = false;
-        }
-        else
-        {
-            canleft = true; canright = true; canjump = true; cancrouch = true; canAttract = true;
-        }
     }
     void Attract()
     {
@@ -159,7 +156,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("Crouch", true);
             GetComponent<BoxCollider2D>().offset = new Vector2(0, -tempcolliderSize.y/4);
-            GetComponent<BoxCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y / 2);
+            GetComponent<BoxCollider2D>().size = new Vector2(tempcolliderSize.x, tempcolliderSize.y / 2.1f);
             //改变碰撞体积
         }
         else
@@ -201,15 +198,39 @@ public class PlayerMove : MonoBehaviour
 
     public void limit()
     {
-        animator.runtimeAnimatorController = limitor;
+        limitted = true;
+        if (animator.runtimeAnimatorController != limitor)
+        {
+            animator.runtimeAnimatorController = limitor;
+            animator.SetBool("equip", true);
+            StartCoroutine(waitForlimitTime());
+        }
         for (int i = 9; i > 3; i--)
             playerbag.itemlist.Remove(playerbag.itemlist[i]);
     }
+
+    IEnumerator waitForlimitTime()
+    {
+        yield return new WaitForSeconds(1.0f);
+        animator.SetBool("equip", false);
+    }
+
     public void notlimit()
     {
-        animator.runtimeAnimatorController = withoutLimitor;
+        limitted = false;
+        if (animator.runtimeAnimatorController != withoutLimitor)
+        {
+            animator.runtimeAnimatorController = withoutLimitor;
+            animator.SetBool("equip", false);
+            StartCoroutine(waitFornotlimitTime());
+        }
         for (int i = playerbag.itemlist.Count; i <= 9; i++)
             playerbag.itemlist.Add(null);
+    }
+    IEnumerator waitFornotlimitTime()
+    {
+        yield return new WaitForSeconds(1.0f);
+        animator.SetBool("equip", true);
     }
     bool CheckOnTheGround()
     {

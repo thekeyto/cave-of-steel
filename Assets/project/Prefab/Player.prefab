@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7078293553876843908}
   - component: {fileID: 7078293553876843905}
   - component: {fileID: 584203206}
-  - component: {fileID: 584203208}
+  - component: {fileID: 1343241}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,7 +157,7 @@ MonoBehaviour:
   maxJumpTime: 1
   hp: 100
   normalspeed: 5
-  jumpSpeed: 30
+  jumpSpeed: 90
   ifground: 0
   chip: 00000000000000000000
   hitBoxCd: 0
@@ -165,6 +165,11 @@ MonoBehaviour:
   withoutLimitor: {fileID: 9100000, guid: ef02ba913b70f714290a50e21054def7, type: 2}
   limitor: {fileID: 9100000, guid: 3773f8638e4241b48b92b1cb5d3c5f6c, type: 2}
   rebirthPoint: {fileID: 0}
+  jumpAudio: {fileID: 8300000, guid: 31998ee09de037845b064ecca9ea23c5, type: 3}
+  landAudio: {fileID: 8300000, guid: 17e065295299a4649972128760fcf5c6, type: 3}
+  dieAudio: {fileID: 8300000, guid: 38be31a0870e420459c2949b4aefb965, type: 3}
+  walkAudio: {fileID: 8300000, guid: 09e086950ad06834cb19e991ddf41a5c, type: 3}
+  limitted: 0
   isboxnearBy: 0
 --- !u!61 &584203206
 BoxCollider2D:
@@ -192,99 +197,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8588235, y: 6.147059}
   m_EdgeRadius: 0
---- !u!82 &584203208
-AudioSource:
+--- !u!61 &1343241
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7078293553876843909}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09e086950ad06834cb19e991ddf41a5c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0043673515, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8588235, y: 6.147059}
+    newSize: {x: 6.56, y: 10.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.850089, y: 6.147059}
+  m_EdgeRadius: 0

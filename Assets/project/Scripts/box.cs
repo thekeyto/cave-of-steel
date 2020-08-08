@@ -5,10 +5,11 @@ using UnityEngine;
 public class box : MonoBehaviour
 {
     public Inventory playerBag;
-    bool chipHeld = false;
+    public bool chipHeld = false;
     public chipPrefab ChipPrefab;
     public Item chip;
     public SpriteRenderer nowSprite;
+    public Sprite noneChip;
     public GameObject player;
     bool ifChip;
     private void Start()
@@ -17,19 +18,18 @@ public class box : MonoBehaviour
         if (chip != null) chipHeld = true;
         nowSprite = GetComponent<SpriteRenderer>();
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("machineArm"))
+            collision.GetComponent<MachineArm>().chip.Add(chip);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")&&Input.GetKeyDown(KeyCode.Q))
         {
             Chip();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("machineArm"))
-            collision.GetComponent<MachineArm>().chip.Add(chip);
-    }
-
     void Chip()
     {
         if (chipHeld==false&&playerBag.itemlist[3]!=null)
@@ -43,15 +43,17 @@ public class box : MonoBehaviour
         if (chipHeld==true)
         {
             Vector2 temp = transform.position;
-            temp.y += 1.5f;
-            Instantiate(ChipPrefab.itemlist[chip.property],transform.position,transform.rotation);
+            temp.y += 9.0f;
+            Instantiate(ChipPrefab.itemlist[chip.property],temp,transform.rotation);
             chipHeld = false;
+            nowSprite.sprite = noneChip;
             chip = null;
         }
     }
 
     public void whenOnChick()
     {
+        Debug.Log(1);
         if (chipHeld)
         {
             ifChip = !ifChip;

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemlist:
   - {fileID: 7723064911607507900, guid: 09c4521848eb8d845881e15f79130ea5, type: 3}
   - {fileID: 7723064911607507900, guid: 58004051192be0947b97787d63c38b48, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7723064911607507900, guid: 6a99304160ea18b4dace997c8e214c93, type: 3}
+  - {fileID: 7723064911607507900, guid: 0b897735a1f5b794cbefa5ba6f1aeef4, type: 3}
+  - {fileID: 7723064911607507900, guid: fea60e08d229cef4d928629ec6d6f806, type: 3}
